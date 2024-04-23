@@ -11,7 +11,7 @@ const UserSchema = z.object({
 type User = z.infer<typeof UserSchema>;
 
 const correctUser: User = { username: "John Doe" };
-const wrongUser: User = { username: 1 };
+const wrongUser: User = { username: 1 }; // Should throw an error because username is not a strings
 
 // console.log(UserSchema.parse(correctUser));
 // console.log(UserSchema.parse(wrongUser));
